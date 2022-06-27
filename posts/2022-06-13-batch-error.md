@@ -3,9 +3,9 @@ title: "ECSタスクで動かしているバッチのエラーを通知してみ
 date: "2022-06-13"
 ---
 
-ECSタスクで動かしているバッチが異常終了した時にエラー通知をしてみます。
+ECSタスクで動かしているバッチが異常終了した時にエラー通知をしてみる。
 
-[Amazon EventBridge のイベントパターン](https://docs.aws.amazon.com/ja_jp/eventbridge/latest/userguide/eb-event-patterns.html)を作ります。
+[Amazon EventBridge のイベントパターン](https://docs.aws.amazon.com/ja_jp/eventbridge/latest/userguide/eb-event-patterns.html)を作る。
 
 ~~~
 {
@@ -21,11 +21,11 @@ ECSタスクで動かしているバッチが異常終了した時にエラー�
 }
 ~~~
 
-これで監視してやれば、異常終了時にイベントを送ることができます。
+これで監視してやれば、異常終了時にイベントを送ることができる。
 
-AWS lambda でイベントをキャッチして、slack に通知を送ってみましょう。
+AWS lambda でイベントをキャッチして、slack に通知を送ってみよう。
 
-`node` 環境で書きます。ライブラリに依存せずに動かしたいので `https` でリクエストを送ります。
+`node` 環境で書く。ライブラリに依存せずに動かしたいので `https` でリクエストを送る。
 
 ~~~js
 var https = require('https');
@@ -62,9 +62,9 @@ exports.handler = function(input, context) {
 
 # おまけ
 
-Rails アプリケーション内から通知を送るパターン。とりあえずざっくりと...。
+Rails アプリケーション内から通知を送るパターン。
 
-`attachments_text` にはスタックトレースを入れたりします。長くなると勝手に畳んでくれるので便利。
+`attachments_text` にはスタックトレースを入れたり。長くなると勝手に畳んでくれるので便利。
 
 ~~~rb
 class SlackClient

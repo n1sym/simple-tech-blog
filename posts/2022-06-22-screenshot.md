@@ -5,7 +5,7 @@ date: "2022-06-22"
 
 rails アプリで gif画像のスクショを撮って保存するメモ。
 
-[puppeteer-ruby](https://github.com/YusukeIwaki/puppeteer-ruby) を使います。
+[puppeteer-ruby](https://github.com/YusukeIwaki/puppeteer-ruby) を使う。
 
 前提：Dockerfile に `chromium` 、Gemfile に `puppeteer-ruby` を追加
 
