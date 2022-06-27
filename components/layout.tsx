@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 
-const name = 'n1sym tech blog'
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = 'n1sym tech blog'
 
 export default function Layout({
   children,
@@ -21,21 +20,14 @@ export default function Layout({
           name="description"
           content="Learn how to build a personal website using Next.js"
         />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
         <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"></meta>
       </Head>
       <header>
         <>
           <h2>
             <Link href="/">
-              <a>{name}</a>
+              <a>{siteTitle}</a>
             </Link>
           </h2>
         </>
@@ -46,8 +38,14 @@ export default function Layout({
           <Link href="/">
             <a>← Back to home</a>
           </Link>
+          <div><br></br></div>
         </div>
       )}
+      <footer>
+        <Link href="https://twitter.com/n1sym">
+          <a>{"twitter/n1sym"}</a>
+        </Link>
+      </footer>
     </div>
   )
 }

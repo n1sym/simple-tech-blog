@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
-import Date from '../components/date'
 import { GetStaticProps } from 'next'
 
 export default function Home({
@@ -21,15 +20,11 @@ export default function Home({
       </Head>
       <section>
         <ul>
-          {allPostsData.map(({ id, date, title }) => (
+          {allPostsData.map(({ id, title }) => (
             <li key={id}>
               <Link href={`/posts/${id}`}>
                 <a>{title}</a>
               </Link>
-              <br />
-              <small>
-                <Date dateString={date} />
-              </small>
             </li>
           ))}
         </ul>

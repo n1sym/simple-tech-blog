@@ -1,9 +1,8 @@
 ---
-title: SE備忘録 2021年下期
+title: "SE備忘録 2021年下期"
 date: "2022-04-18"
-categories: 技術
-tags: [diary]
 ---
+
 システムエンジニアに就いて2年が経った。2021年下期を振り返る。
 
 - [SE備忘録 2020年上期](https://tech.hukurouo.com/articles/2020-10-20-se-hurikaeri1)
@@ -14,44 +13,45 @@ tags: [diary]
 
 ### 広告掲載管理システムの開発
 
-- Rails + GoogleAdManagerAPI でウェブ広告掲載を管理するアプリ
-- メイン開発は自分一人なので、伸び伸びと開発できた
-- おまかな方針は立っていたので、それをロジックに落とし込んで実装していった
-- とりあえず動かせる状態に持っていき、開発環境に反映させて運用チームに実際に触ってもらうことを心がけた
-  - やりたいことが技術的に可能かどうかを確かめることができた
-  - 実際に動かしてみると分かる改善点もたくさんあった
-- 広告運用チームが持っていたドメイン知識を得ることに苦労した
-  - 少人数で回していることもあり、属人化の傾向が強かった
-  - MTGを定期的に開催し、新しく入った人もそれを見れば全体像が理解できるように、ドキュメントに適宜まとめていった
-  - 技術側からも機能の改善案など提案ができるようになった　運用チーム視点と開発視点の双方向から設計を考えていくことができた
-  - 何のための機能なのか、そもそもこれは必要な機能なのか、業務フローのほうで改善できまいか、というところを考えることができるようになった
+Rails + GoogleAdManagerAPI でウェブ広告掲載を管理するアプリを作っていた。
+
+要望ベースでおまかな方針は立っていたので、それをロジックに落とし込んで実装していった。
+
+機能ごとに動かせる状態に持っていき、開発環境に反映させて運用チームに実際に触ってもらうことを心がけた。実際に動かしてみると分かる改善点もたくさんあった。こういうイテレーションを回して開発していく手法は、個人的にとても性に合っていた。
+
+広告運用チームが持っていたドメイン知識を自分の中で嚙み砕くのに苦労した。MTGを定期的に開催し、ドキュメントに適宜まとめていった。
+
+業務フローを把握することで、技術側からも機能の改善案など提案ができるようになった。運用チーム視点と開発視点の双方向から設計を考えていくことができた。何のための機能なのか、そもそもこれは必要な機能なのか。業務フローのほうで改善できまいか、というところを考えることができたのは良い経験になったと思う。
+
+
+### 設計がんばる
+
+中規模の Rails アプリを1から設計して実装していく初めての経験だった。Rails はその名前の通りレールに沿っていれば最低限の品質は保てるだろうと思ったので、とにかく Rails の規約に沿うことを心がけた。
+
+とはいえクラス設計など悩むところは結構あったので、設計の本をいくつか読んだ。このあたりの知識は色々なところに活かせそうなので、もうちょっと踏み込もうと思っている。2022年上期は設計を主にやっていきたい。
 
 ### CFnでインフラ構築
 
-- 2021年下期は主にインフラ方面を中心に学習した
-- 学習内容のアウトプットとして Zenn に本を書いた
-  - [https://zenn.dev/hukurouo/books/cfn-hands-on](https://zenn.dev/hukurouo/books/cfn-hands-on)
-- インフラは面白い
-  - バックエンドと同じくらい面白いな～という気持ちがある
-  - Kubernetes とかも触ってみたい
+2021年下期は主にインフラ方面を中心に学習した。学習内容のアウトプットとして Zenn に本を書いている。
 
-### 設計がんばる
-- 中規模の Rails アプリを1から設計して実装していく初めての経験
-- Rails はその名前の通りレールに沿っていれば大丈夫という感じだったので、とにかく Rails の規約に沿うことを心がけた
-- とはいえクラス設計など悩むところは結構あったので、設計の本をいくつか読んだ
-  - このあたりの知識は色々なところに活かせそうなので、もうちょっと踏み込もうと思っている
-  - 2022年上期は設計を主にやっていきたい
+[Rails × CloudFormation ハンズオン](https://zenn.dev/hukurouo/books/cfn-hands-on)
+
+インフラは面白い。バックエンドと同じくらい面白いな～という気持ちがある。Kubernetes あたりも触ってみたい。
+
 
 ### OSS にコントリビューションをした
-- 会社で使っている OSS ライブラリにいくつかPRを送った
-- example コードの不備を発見したのがきっかけ
-- 本当に些細な修正だったので、勇気を出してはじめてのコントリビューションを試みた
-  - [https://github.com/googleads/google-api-ads-ruby/pull/184](https://github.com/googleads/google-api-ads-ruby/pull/184)
-  - [https://github.com/googleads/google-api-ads-ruby/pull/185](https://github.com/googleads/google-api-ads-ruby/pull/185)
-- 無事にマージされる
-- 大分自分の中で敷居が下がり、結構気軽にPRを送れるようになった
-  - [https://github.com/googleads/google-api-ads-ruby/pull/186](https://github.com/googleads/google-api-ads-ruby/pull/186)
-  - [https://github.com/prawnpdf/prawn/pull/1265](https://github.com/prawnpdf/prawn/pull/1265)
+
+会社で使っている OSS ライブラリにいくつかPRを送った。はじめてのコントリビューション。example コードの不備を発見したのがきっかけで、本当に些細な修正だったので、勇気を出してをPRを送ってみた。
+
+- [https://github.com/googleads/google-api-ads-ruby/pull/184](https://github.com/googleads/google-api-ads-ruby/pull/184)
+- [https://github.com/googleads/google-api-ads-ruby/pull/185](https://github.com/googleads/google-api-ads-ruby/pull/185)
+- [https://github.com/prawnpdf/prawn/pull/1265](https://github.com/prawnpdf/prawn/pull/1265)
+
+無事にマージされた。結構な嬉しさがあった。OSSの文化がとても好きなので、もっと貢献していきたいな。
+
+[google-api-ads-ruby/pull/186](https://github.com/googleads/google-api-ads-ruby/pull/186) ではライブラリの内部処理を修正するPRとかもマージしてもらった。嬉しいね。
+
+  
 
 ## 趣味でやったこと
 
