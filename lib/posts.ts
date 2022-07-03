@@ -3,6 +3,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import {unified} from 'unified'
 import remarkParse from 'remark-parse'
+import remarkGfm from 'remark-gfm'
 import remarkRehype from 'remark-rehype'
 import rehypeFormat from 'rehype-format'
 import rehypeStringify from 'rehype-stringify'
@@ -63,6 +64,7 @@ export async function getPostData(id: string) {
   const processedContent = await unified()
     .use(remarkParse)
     .use(remarkRehype)
+    .use(remarkGfm) // Support GFM (tables, autolinks, tasklists, strikethrough).
     .use(rehypeExternalLinks, {target: "_blank", rel: ['nofollow']})
     .use(rehypeFormat)
     .use(rehypeStringify)
