@@ -54,18 +54,26 @@ code[class*="language-"]{
 table {
   border-spacing: 0;
   border-collapse: collapse;
-	border-bottom: 1px solid #aaa;
-  color: #555;
+
 	margin-bottom: 20px;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow: auto;
+}
+
+table tr:nth-child(odd) td {
+	background: #9cadc212;
 }
 
 th {
-	border-top: 1px solid #aaa;
-  padding: 10px 0 10px 6px;
+	border: 1px solid #d0d7de;
+  padding: 6px 13px;
+  font-weight: 600;
 	text-align: left;
 }
 
 td {
-	border-top: 1px solid #aaa;
-	padding: 10px 6px 10px 6px;
+	border: 1px solid #d0d7de;
+	padding: 6px 13px;
 }
